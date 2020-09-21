@@ -1,4 +1,3 @@
-# quick-emote
-A GitHub hosted CDN for emotes, that is all
+# Quick Emote
 
-![monkaWae](monkaWae.png)
+A GitHub-hosted CDN for pasting emotes into Discord
