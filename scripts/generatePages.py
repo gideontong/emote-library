@@ -11,6 +11,7 @@ with tag('html'):
     with tag('body'):
         with tag('h1'):
             text('Coming Soon')
+        doc.stag('input', id='input', type='text')
         with tag('table', klass='rwd-table'):
             with tag('tr'):
                 line('th', 'Name')
@@ -21,7 +22,17 @@ with tag('html'):
                     line('td', emote.split('.')[0], data='Name')
                     with tag('td', data='Emote'):
                         doc.stag('img', src='i/' + emote)
-                    line('td', 'Copy', data='Link')
+                    line('td', 'Copy', data='Link', onclick='copy(\'https://gg.egid.tech/i/' + emote + '\')')
+        with tag('script'):
+            text(
+            '''
+            function copy(data) {
+                let text = document.querySelector('#input');
+                document.getElementById('input').setAttribute('value', data);
+                text.select();
+                document.execCommand('copy');
+            }
+            ''')
 
 with open('../index.html', 'w') as file:
     file.write(doc.getvalue())
