@@ -81,3 +81,21 @@ h1 {
 .rwd-table th, .rwd-table td:before {
   color: #dd5;
 }
+
+ul {
+  display: inline;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  line-height: 1.5em;
+  list-style: none;
+}
+
+li {
+  width: 56px;
+  height: 56px;
+  display: inline-block;
+  margin: 0 0 10px 10px;
+}

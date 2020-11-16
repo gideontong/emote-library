@@ -39,30 +39,16 @@ with tag('html'):
                     line('td', 'Copy', data='Link')
         with tag('h2'):
             text('Android')
-        with tag('table', klass='rwd-table'):
-            with tag('tr'):
-                line('th', 'Name')
-                line('th', 'Emote')
-                line('th', 'Link')
-            for emote in listdir('../android'):
-                with tag('tr', onclick='copy(\'https://gg.egid.tech/android/' + emote + '\')'):
-                    line('td', emote.split('.')[0], data='Name')
-                    with tag('td', data='Emote'):
-                        doc.stag('img', src='android/' + emote)
-                    line('td', 'Copy', data='Link')
+        for emote in listdir('../android'):
+            with tag('ul', onclick='copy(\'https://gg.egid.tech/android/' + emote + '\')'):
+                with tag('li', data='Emote'):
+                    doc.stag('img', src='android/' + emote)
         with tag('h2'):
             text('iOS')
-        with tag('table', klass='rwd-table'):
-            with tag('tr'):
-                line('th', 'Name')
-                line('th', 'Emote')
-                line('th', 'Link')
-            for emote in listdir('../ios'):
-                with tag('tr', onclick='copy(\'https://gg.egid.tech/ios/' + emote + '\')'):
-                    line('td', emote.split('.')[0], data='Name')
-                    with tag('td', data='Emote'):
-                        doc.stag('img', src='ios/' + emote)
-                    line('td', 'Copy', data='Link')
+        for emote in listdir('../ios'):
+            with tag('ul', onclick='copy(\'https://gg.egid.tech/ios/' + emote + '\')'):
+                with tag('li', data='Emote'):
+                    doc.stag('img', src='ios/' + emote)
         with tag('script'):
             text(
             '''
