@@ -10,8 +10,10 @@ with tag('html'):
         doc.stag('link', rel = 'stylesheet', href='css/styles.css')
     with tag('body'):
         with tag('h1'):
-            text('Coming Soon')
+            text('Fast Emote Database')
         doc.stag('input', id='input', type='text')
+        with tag('h2'):
+            text('Discord')
         with tag('table', klass='rwd-table'):
             with tag('tr'):
                 line('th', 'Name')
@@ -22,6 +24,32 @@ with tag('html'):
                     line('td', emote.split('.')[0], data='Name')
                     with tag('td', data='Emote'):
                         doc.stag('img', src='i/' + emote)
+                    line('td', 'Copy', data='Link')
+        with tag('h2'):
+            text('Android')
+        with tag('table', klass='rwd-table'):
+            with tag('tr'):
+                line('th', 'Name')
+                line('th', 'Emote')
+                line('th', 'Link')
+            for emote in listdir('../android'):
+                with tag('tr', onclick='copy(\'https://gg.egid.tech/android/' + emote + '\')'):
+                    line('td', emote.split('.')[0], data='Name')
+                    with tag('td', data='Emote'):
+                        doc.stag('img', src='android/' + emote)
+                    line('td', 'Copy', data='Link')
+        with tag('h2'):
+            text('iOS')
+        with tag('table', klass='rwd-table'):
+            with tag('tr'):
+                line('th', 'Name')
+                line('th', 'Emote')
+                line('th', 'Link')
+            for emote in listdir('../ios'):
+                with tag('tr', onclick='copy(\'https://gg.egid.tech/ios/' + emote + '\')'):
+                    line('td', emote.split('.')[0], data='Name')
+                    with tag('td', data='Emote'):
+                        doc.stag('img', src='ios/' + emote)
                     line('td', 'Copy', data='Link')
         with tag('script'):
             text(
