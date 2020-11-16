@@ -1,16 +1,27 @@
 from yattag import Doc
-from os import listdir
+from os import listdir, walk, path
+
+def get_size(start_path = '../i'):
+    total_size = 0
+    for dirpath, dirnames, files in walk(start_path):
+        for f in files:
+            fp = path.join(dirpath, f)
+            if not path.islink(fp):
+                total_size += path.getsize(fp)
+    return total_size
 
 doc, tag, text, line = Doc().ttl()
 
 with tag('html'):
     with tag('head'):
         with tag('title'):
-            text('Coming Soon')
+            text('Fast Emote Database')
         doc.stag('link', rel = 'stylesheet', href='css/styles.css')
     with tag('body'):
         with tag('h1'):
             text('Fast Emote Database')
+        with tag('p'):
+            text(f'{get_size()//1000} KB DB Size')
         doc.stag('input', id='input', type='text')
         with tag('h2'):
             text('Discord')
