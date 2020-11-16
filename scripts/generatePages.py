@@ -10,6 +10,7 @@ def get_size(start_path = '../i'):
                 total_size += path.getsize(fp)
     return total_size
 
+size = get_size()
 doc, tag, text, line = Doc().ttl()
 
 with tag('html'):
@@ -21,7 +22,7 @@ with tag('html'):
         with tag('h1'):
             text('Fast Emote Database')
         with tag('p'):
-            text(f'{get_size()//1000} KB DB Size')
+            text(f'{size//1000} KB DB Size ({round(size/625000, 2)} ms Load Time)')
         doc.stag('input', id='input', type='text')
         with tag('h2'):
             text('Discord')
