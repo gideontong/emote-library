@@ -18,11 +18,11 @@ with tag('html'):
                 line('th', 'Emote')
                 line('th', 'Link')
             for emote in listdir('../i'):
-                with tag('tr'):
+                with tag('tr', onclick='copy(\'https://gg.egid.tech/i/' + emote + '\')'):
                     line('td', emote.split('.')[0], data='Name')
                     with tag('td', data='Emote'):
                         doc.stag('img', src='i/' + emote)
-                    line('td', 'Copy', data='Link', onclick='copy(\'https://gg.egid.tech/i/' + emote + '\')')
+                    line('td', 'Copy', data='Link')
         with tag('script'):
             text(
             '''
