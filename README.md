@@ -1,3 +1,3 @@
-# Quick Emote
+# Emote Library
 
-A GitHub-hosted CDN for pasting emotes into Discord
+View the live deployment at [gg.egid.tech](https://gg.egid.tech). Emote library is a GitHub-hosted CDN for delivering emotes on Discord and Slack.
