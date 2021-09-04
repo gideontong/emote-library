@@ -1,2 +1,6 @@
+# Application
+import/*
+!import/.gitkeep
+
 # Environment
 venv
